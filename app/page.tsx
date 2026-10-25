@@ -5,64 +5,80 @@ export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <Header />
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            Rishon Muppaneni
-           
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            I am a junior at Irvington Highschool, looking to help neurodiverse children and people in need of wearable devices to help appease their conditions. I have built a robotic stick to help visually-impaired people navigate their surroundings and avoid obstacles. In addition to this, I developed a deep learning model that classifies different stages of Alzeimers Disease. I am co-founder and vice president of Rooting Minds, a non-profit organization which helps neurodiverse children with problem solving and critical thinking through various games and activities. I am currently working on an EEG wearable heatset that can determine the intentions of neurodiverse children by collecting data from EEG brain signals and using an AI model to classify and give soltuions to their intentions. Furthermore, I am working on a button device, which helps non-verbal children record their speech and communicate with others.
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+
+      <section className="max-w-6xl mx-auto px-6 pt-16 pb-24 lg:pt-24">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="space-y-8">
+            <div className="flex flex-wrap items-center gap-3 text-sm">
+              <span className="inline-flex items-center rounded-full bg-white border border-[#e6dcc8] px-3.5 py-1.5 font-medium text-[#5c5347] shadow-sm">
+                Junior . Irvington High
+              </span>
+              <span className="inline-flex items-center rounded-full bg-[#0d9488]/10 text-[#0d9488] border border-[#0d9488]/20 px-3.5 py-1.5 font-medium">
+                Rooting Minds
+              </span>
+              <span className="text-[#5c5347] font-medium tracking-wide uppercase text-xs">
+                Class of 2028 . Fremont, CA
+              </span>
+            </div>
+
+            <div>
+              <p className="text-xl italic text-[#5c5347] mb-3">
+                Hey, I&apos;m Rishon
+              </p>
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold leading-[1.15] tracking-tight text-[#0d9488]">
+                Building tools for the people the world leaves out.
+              </h1>
+            </div>
+
+            <p className="text-lg leading-relaxed text-[#5c5347] max-w-xl">
+              I design wearables and AI systems that help neurodiverse children and people with disabilities. From an EEG headset that reads intent to a robotic stick that helps the visually impaired navigate, I build what standard tools leave behind.
+            </p>
+
+            <div className="flex flex-wrap gap-4 pt-2">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 rounded-full bg-[#0d9488] text-white font-medium px-6 py-3.5 hover:bg-[#0f766e] transition-colors shadow-md"
+              >
+                <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-xs font-bold">
+                  RM
+                </span>
+                Let's Connect
+              </a>
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-[#0d9488]/30 text-[#0d9488] font-medium px-6 py-3.5 hover:bg-[#0d9488]/5 transition-colors"
+              >
+                See What I've Built 
+              </a>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="relative">
+          <div className="absolute -top-4 -right-4 z-10">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white border border-[#e6dcc8] px-3.5 py-1.5 text-sm font-medium shadow-sm">
+              <span className="w-6 h-6 rounded-full bg-[#0d9488] text-white flex items-center justify-center text-xs font-bold">
+                RM
+              </span>
+              Class of 2028
+            </span>
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-xl border border-[#e6dcc8] bg-gradient-to-br from-[#0d9488]/10 to-[#fbf7ef] aspect-[4/5] flex items-center justify-center">
+            <div className="text-center p-8">
+              <div className="w-24 h-24 rounded-2xl bg-[#0d9488] text-white flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-lg">
+                RM
+              </div>
+              <p className="text-[#5c5347] font-medium">
+                Photo coming soon
+              </p>
+              <p className="text0sm text-[#5c4347]/70 mt-1">
+                Replace this card with your photo
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
     </div>
   );
 }
