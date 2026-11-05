@@ -21,6 +21,11 @@ export default function Header() {
                         Home
                     </a>
                     <span className="text-[#d6d3d1]">|</span>
+                    
+                    <a href="/work" className="hover:text-[#0d9488] transition-colors">
+                        Work
+                    </a>
+                    <span className="text-[#e6dcc8]">|</span>
 
 
                     <a
