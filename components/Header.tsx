@@ -24,9 +24,8 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Traveling wave: bar heights ripple left-to-right as scrollY changes.
-  const wavePhase = scrollY / 60;
-  const magnify = 1 + 0.28 * Math.exp(-Math.pow((scrollY - 260) / 220, 2));
+  const wavePhase = scrollY / 55;
+  const magnify = 1 + 0.22 * Math.exp(-Math.pow((scrollY - 260) / 220, 2));
 
   const navItems = [
     { label: 'About', href: '/about' },
@@ -37,36 +36,36 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-[#fbf7ef]/85 border-b border-[#e6dcc8]">
+    <header className="sticky top-0 z-50 backdrop-blur-md bg-white/90 border-b border-slate-200/80 shadow-xs">
       <nav className="container-custom py-4 flex justify-between items-center gap-6">
         <Link href="/" className="flex items-center gap-3 group shrink-0">
-          <div className="w-10 h-10 rounded-lg bg-[#0d9488] flex items-center justify-center font-bold text-white text-lg group-hover:scale-110 transition-transform shadow-sm">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 via-blue-600 to-indigo-700 flex items-center justify-center font-bold text-white text-base group-hover:scale-105 group-hover:shadow-md group-hover:shadow-sky-500/25 transition-all duration-300">
             RM
           </div>
-          <span className="hidden sm:block font-bold text-lg text-[#2b2620]">
+          <span className="hidden sm:block font-bold text-lg text-slate-900 tracking-tight group-hover:text-sky-600 transition-colors">
             Rishon Muppaneni
           </span>
         </Link>
 
-        {/* Desktop Menu — pipe-separated like the reference */}
-        <div className="hidden lg:flex items-center gap-5 text-sm font-medium text-[#5c5347]">
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex items-center gap-5 text-sm font-medium text-slate-600">
           {navItems.map((item, idx) => (
             <span key={item.href} className="flex items-center gap-5">
-              <Link href={item.href} className="hover:text-[#0d9488] transition-colors">
+              <Link href={item.href} className="hover:text-sky-600 transition-colors">
                 {item.label}
               </Link>
-              {idx < navItems.length - 1 && <span className="text-[#e6dcc8]">|</span>}
+              {idx < navItems.length - 1 && <span className="text-slate-300">|</span>}
             </span>
           ))}
         </div>
 
-        {/* Decorative waveform tick marks + CTA */}
-        <div className="hidden lg:flex items-center gap-4 shrink-0">
+        {/* Right side: Waveform + GitHub + Connect */}
+        <div className="hidden lg:flex items-center gap-5 shrink-0">
           <a
             href="https://github.com/rishonmuppaneni"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-[#5c5347] hover:text-[#0d9488] transition-colors"
+            className="text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors"
           >
             GitHub
           </a>
@@ -80,7 +79,7 @@ export default function Header() {
                 return (
                   <span
                     key={i}
-                    className="w-[2px] bg-[#0d9488] rounded-full transition-all duration-150 ease-out"
+                    className="w-[2px] bg-gradient-to-t from-sky-500 to-blue-600 rounded-full transition-all duration-150 ease-out"
                     style={{ height: `${h}px` }}
                   ></span>
                 );
@@ -89,10 +88,10 @@ export default function Header() {
           </div>
           <Link
             href="/contact"
-            className="flex items-center gap-2 pl-4 pr-1.5 py-1.5 rounded-full bg-[#fffdf8] border border-[#e6dcc8] shadow-sm hover:shadow-md hover:border-[#0d9488]/40 transition-all"
+            className="flex items-center gap-2 pl-4 pr-1.5 py-1.5 rounded-full bg-white border border-slate-300 shadow-xs hover:border-sky-500 hover:shadow-md hover:scale-105 transition-all"
           >
-            <span className="text-sm font-semibold text-[#2b2620]">Let's Connect</span>
-            <span className="w-7 h-7 rounded-full bg-[#0d9488] flex items-center justify-center text-white text-[0.65rem] font-bold">
+            <span className="text-sm font-semibold text-slate-800">Let's Connect</span>
+            <span className="w-7 h-7 rounded-full bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center text-white text-[0.65rem] font-bold shadow-xs">
               RM
             </span>
           </Link>
@@ -100,26 +99,25 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden p-2 rounded-lg hover:bg-[#f0e9d8] text-[#2b2620] transition"
+          className="lg:hidden p-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 hover:bg-slate-200 transition"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileMenuOpen}
-          aria-controls="mobile-menu"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
           </svg>
         </button>
 
-        {/* Mobile Menu — overlay */}
+        {/* Mobile Menu Overlay */}
         {mobileMenuOpen && (
-          <div id="mobile-menu" className="fixed top-[68px] left-0 right-0 h-[calc(100vh-68px)] bg-[#fbf7ef] lg:hidden overflow-y-auto z-50">
-            <div className="container-custom py-6 flex flex-col gap-1">
+          <div className="fixed top-[69px] left-0 right-0 h-[calc(100vh-69px)] bg-white/98 backdrop-blur-xl lg:hidden overflow-y-auto z-50 border-t border-slate-200 p-6 flex flex-col justify-between shadow-xl">
+            <div className="flex flex-col gap-2">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-lg font-medium text-[#2b2620] hover:text-[#0d9488] py-3.5 border-b border-[#e6dcc8] transition-colors"
+                  className="text-xl font-medium text-slate-800 hover:text-sky-600 py-3 border-b border-slate-100 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.label}
@@ -129,13 +127,16 @@ export default function Header() {
                 href="https://github.com/rishonmuppaneni"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg font-medium text-[#2b2620] hover:text-[#0d9488] py-3.5 border-b border-[#e6dcc8] transition-colors"
+                className="text-xl font-medium text-slate-800 hover:text-sky-600 py-3 border-b border-slate-100 transition-colors"
               >
                 GitHub
               </a>
+            </div>
+
+            <div className="pt-6">
               <Link
                 href="/contact"
-                className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-full bg-[#0d9488] text-white font-semibold mt-6 shadow-md"
+                className="w-full btn-primary text-center py-3.5"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Let's Connect

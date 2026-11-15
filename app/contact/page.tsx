@@ -4,7 +4,7 @@ import { useState } from 'react';
 import PageHero from '@/components/PageHero';
 
 const inputClass =
-  'w-full px-4 py-2.5 border border-[#e6dcc8] rounded-xl bg-[#fffdf8] text-[#2b2620] focus:outline-none focus:border-[#0d9488] focus:ring-2 focus:ring-[#0d9488]/20 transition';
+  'w-full px-4 py-3 border border-slate-300 rounded-xl bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 transition text-sm';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -34,84 +34,84 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-[#fbf7ef] min-h-screen">
+    <div className="bg-[#f8fafc] text-slate-900 min-h-screen">
       <PageHero
         title="Get in Touch"
         subtitle="Whether it's a research idea, a collaboration on assistive technology, or discussing wearables and AI for neurodiverse kids — I'd love to hear from you."
       />
 
-      <div className="container-custom py-16 md:py-20">
+      <div className="container-custom py-16 md:py-24">
         <div className="max-w-5xl mx-auto grid md:grid-cols-5 gap-8">
-          {/* Contact info column */}
-          <div className="md:col-span-2 space-y-4">
+          {/* Contact Info Column */}
+          <div className="md:col-span-2 space-y-5">
             <div className="card">
-              <h3 className="heading-sm text-base mb-2" style={{ color: '#0d9488' }}>
-                Email
+              <h3 className="heading-sm text-base mb-2 text-sky-700">
+                Direct Email
               </h3>
               <a
                 href="mailto:rishonmuppaneni@gmail.com"
-                className="text-slate-700 hover:text-[#0d9488] transition break-all font-medium"
+                className="text-slate-800 hover:text-sky-600 transition break-all font-medium text-sm"
               >
                 rishonmuppaneni@gmail.com
               </a>
-              <p className="text-xs text-[var(--muted)] mt-2">
+              <p className="text-xs text-slate-500 mt-2">
                 I typically respond within 24 to 48 hours.
               </p>
             </div>
 
             <div className="card">
-              <h3 className="heading-sm text-base mb-3" style={{ color: '#0284c7' }}>
+              <h3 className="heading-sm text-base mb-3 text-teal-700">
                 Social & Code
               </h3>
-              <div className="flex flex-col gap-2.5">
+              <div className="flex flex-col gap-3">
                 <a
                   href="https://github.com/rishonmuppaneni"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-between text-slate-700 hover:text-[#0d9488] transition font-medium"
+                  className="inline-flex items-center justify-between text-slate-700 hover:text-sky-600 transition font-medium text-sm"
                 >
-                  <span>GitHub</span>
-                  <span className="text-[#0d9488]">→</span>
+                  <span>GitHub Repository</span>
+                  <span className="text-sky-600">→</span>
                 </a>
                 <a
                   href="https://rootingminds.org/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-between text-slate-700 hover:text-[#0d9488] transition font-medium"
+                  className="inline-flex items-center justify-between text-slate-700 hover:text-sky-600 transition font-medium text-sm"
                 >
                   <span>Rooting Minds Non-Profit</span>
-                  <span className="text-[#0d9488]">↗</span>
+                  <span className="text-sky-600">↗</span>
                 </a>
               </div>
             </div>
 
             <div className="card">
-              <h3 className="heading-sm text-base mb-2" style={{ color: '#059669' }}>
+              <h3 className="heading-sm text-base mb-2 text-blue-700">
                 Location
               </h3>
-              <p className="text-slate-700 font-medium">Fremont, California, USA</p>
-              <p className="text-xs text-[var(--muted)] mt-1">
+              <p className="text-slate-800 font-medium text-sm">Fremont, California, USA</p>
+              <p className="text-xs text-slate-500 mt-1">
                 Irvington High School · Silicon Valley Bay Area
               </p>
             </div>
           </div>
 
-          {/* Form column */}
+          {/* Form Column */}
           <div className="md:col-span-3 card">
-            <h2 className="heading-md mb-2 text-[#2b2620]">Send a Message</h2>
-            <p className="text-sm text-[var(--muted)] mb-6">
+            <h2 className="heading-md mb-2 text-slate-900">Send a Message</h2>
+            <p className="text-sm text-slate-500 mb-6">
               Fill out this quick form to start an email thread directly.
             </p>
 
             {submitted && (
-              <div className="p-4 bg-teal-50 border border-teal-200 rounded-xl mb-6 text-sm text-teal-800 font-medium">
+              <div className="p-4 bg-sky-50 border border-sky-200 rounded-xl mb-6 text-sm text-sky-800 font-medium">
                 Opening your email client with this message pre-filled — just hit send there!
               </div>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2 text-slate-700">
+                <label htmlFor="name" className="block text-xs font-semibold uppercase tracking-wider mb-2 text-slate-700">
                   Name
                 </label>
                 <input
@@ -127,7 +127,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2 text-slate-700">
+                <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-wider mb-2 text-slate-700">
                   Email
                 </label>
                 <input
@@ -143,7 +143,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium mb-2 text-slate-700">
+                <label htmlFor="subject" className="block text-xs font-semibold uppercase tracking-wider mb-2 text-slate-700">
                   Subject
                 </label>
                 <input
@@ -159,7 +159,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2 text-slate-700">
+                <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-wider mb-2 text-slate-700">
                   Message
                 </label>
                 <textarea

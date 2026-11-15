@@ -5,7 +5,7 @@ export const metadata = {
   description: 'Rooting Minds, neurodiversity outreach, STEM mentorship, and leadership — activities Rishon Muppaneni leads outside the lab.',
 };
 
-const ACCENTS = ['#0d9488', '#0284c7', '#d97706', '#059669', '#6366f1'];
+const ACCENTS = ['#0284c7', '#0d9488', '#2563eb', '#059669', '#4f46e5'];
 
 interface ActivityCardProps {
   index: number;
@@ -19,18 +19,24 @@ interface ActivityCardProps {
 function ActivityCard({ index, title, meta, description, items, itemsLabel = 'Highlights' }: ActivityCardProps) {
   const accent = ACCENTS[index % ACCENTS.length];
   return (
-    <div className="card relative overflow-hidden">
-      <div className="absolute top-0 left-0 bottom-0 w-1.5" style={{ backgroundColor: accent }}></div>
-      <h2 className="heading-md mb-1 text-[#2b2620]">{title}</h2>
-      <p className="text-sm font-semibold mb-4" style={{ color: accent }}>{meta}</p>
-      {description && <p className="prose mb-5">{description}</p>}
+    <div className="card relative overflow-hidden group">
+      <div
+        className="absolute top-0 left-0 bottom-0 w-1.5"
+        style={{ backgroundColor: accent }}
+      ></div>
+      <h2 className="heading-md mb-1 text-slate-900">{title}</h2>
+      <p className="text-xs font-semibold mb-4 uppercase tracking-wider" style={{ color: accent }}>{meta}</p>
+      {description && <p className="prose mb-5 text-slate-600">{description}</p>}
       {items && (
-        <div className="bg-teal-50/50 border border-teal-100/80 p-5 rounded-xl">
-          <h3 className="heading-sm mb-3 text-sm uppercase tracking-wide text-[var(--muted)]">{itemsLabel}</h3>
+        <div className="bg-slate-50 border border-slate-200 p-5 rounded-xl">
+          <h3 className="heading-sm mb-3 text-xs uppercase tracking-widest text-slate-500">{itemsLabel}</h3>
           <ul className="space-y-2">
             {items.map((item, i) => (
               <li key={i} className="text-sm text-slate-600 flex gap-2.5">
-                <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: accent }}></span>
+                <span
+                  className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0"
+                  style={{ backgroundColor: accent }}
+                ></span>
                 <span>{item}</span>
               </li>
             ))}
@@ -43,15 +49,15 @@ function ActivityCard({ index, title, meta, description, items, itemsLabel = 'Hi
 
 export default function Activities() {
   return (
-    <div className="bg-[#fbf7ef] min-h-screen">
+    <div className="bg-[#f8fafc] text-slate-900 min-h-screen">
       <PageHero
         eyebrow="Outside the Lab"
         title="Activities & Leadership"
         subtitle="Bridging technical engineering with direct community impact through non-profit leadership and inclusive STEM education."
       />
 
-      <div className="container-custom py-16 md:py-20">
-        <div className="max-w-4xl mx-auto space-y-6">
+      <div className="container-custom py-16 md:py-24">
+        <div className="max-w-4xl mx-auto space-y-7">
           <ActivityCard
             index={0}
             title="Rooting Minds"

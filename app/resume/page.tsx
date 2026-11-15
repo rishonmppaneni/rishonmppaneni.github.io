@@ -103,50 +103,50 @@ const sections = [
   },
 ];
 
-const ACCENTS = ['#0d9488', '#0284c7', '#d97706', '#059669'];
+const ACCENTS = ['#0284c7', '#0d9488', '#2563eb', '#059669'];
 
 export default function Resume() {
   return (
-    <div className="bg-[#fbf7ef] min-h-screen">
-      <section className="relative overflow-hidden pt-16 pb-14 md:pt-20 md:pb-16 border-b border-[#e6dcc8]">
+    <div className="bg-[#f8fafc] text-slate-900 min-h-screen">
+      <section className="relative overflow-hidden pt-16 pb-14 md:pt-20 md:pb-16 border-b border-slate-200/80 bg-white">
         <div className="container-custom flex flex-wrap justify-between items-end gap-6">
           <div>
-            <h1 className="heading-lg mb-3 text-[#0d9488]">Resume</h1>
-            <p className="text-[var(--muted)]">
+            <h1 className="heading-lg mb-3 text-slate-900">Resume</h1>
+            <p className="text-slate-500 text-sm">
               rishonmuppaneni@gmail.com · Fremont, California · Irvington High School
             </p>
           </div>
           <a
             href="mailto:rishonmuppaneni@gmail.com?subject=Resume%20Request"
-            className="btn-primary inline-flex items-center gap-2 shrink-0"
+            className="btn-primary inline-flex items-center gap-2 shrink-0 shadow-md"
           >
             Request Official PDF <span>↓</span>
           </a>
         </div>
       </section>
 
-      <div className="container-custom py-16 md:py-20">
-        <div className="max-w-4xl mx-auto space-y-6">
+      <div className="container-custom py-16 md:py-24">
+        <div className="max-w-4xl mx-auto space-y-8">
           {sections.map((section, sectionIndex) => (
-            <section key={section.title} className="card relative overflow-hidden">
+            <section key={section.title} className="card relative overflow-hidden group">
               <div
                 className="absolute top-0 left-0 bottom-0 w-1.5"
                 style={{ backgroundColor: ACCENTS[sectionIndex % ACCENTS.length] }}
               />
               <h2
-                className="heading-sm text-lg mb-5 uppercase tracking-wide"
+                className="heading-sm text-base mb-6 uppercase tracking-widest font-bold"
                 style={{ color: ACCENTS[sectionIndex % ACCENTS.length] }}
               >
                 {section.title}
               </h2>
               {section.entries.map((entry, i) => (
                 <div key={i} className="mb-6 last:mb-0">
-                  <h3 className="font-bold text-slate-900 mb-0.5">{entry.title}</h3>
-                  {entry.meta && <p className="text-sm text-[var(--muted)] mb-2 font-medium">{entry.meta}</p>}
+                  <h3 className="font-bold text-slate-900 text-base mb-1">{entry.title}</h3>
+                  {entry.meta && <p className="text-xs text-slate-500 mb-2.5 font-medium">{entry.meta}</p>}
                   {entry.bullets && (
                     <ul className="text-sm space-y-2 text-slate-600 mt-2">
                       {entry.bullets.map((bullet, j) => (
-                        <li key={j} className="flex gap-2 leading-relaxed">
+                        <li key={j} className="flex gap-2.5 leading-relaxed">
                           <span
                             className="shrink-0 mt-0.5 font-bold"
                             style={{ color: ACCENTS[sectionIndex % ACCENTS.length] }}

@@ -19,7 +19,7 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#fbf7ef] text-[#2b2620]">
+      <body className="min-h-screen flex flex-col bg-[#f8fafc] text-slate-900 antialiased selection:bg-sky-500/20 selection:text-sky-800">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

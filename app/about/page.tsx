@@ -5,7 +5,7 @@ export const metadata = {
   description: 'High school engineer, researcher, and co-founder focused on assistive technology, EEG wearables, and AI for neurodiverse communities.',
 };
 
-const ACCENTS = ['#0d9488', '#0284c7', '#d97706', '#059669', '#6366f1', '#0d9488'];
+const ACCENTS = ['#0284c7', '#0d9488', '#2563eb', '#059669', '#4f46e5', '#0284c7'];
 
 interface SectionCardProps {
   index: number;
@@ -16,35 +16,35 @@ interface SectionCardProps {
 function SectionCard({ index, title, children }: SectionCardProps) {
   const accent = ACCENTS[index % ACCENTS.length];
   return (
-    <div className="card relative pl-8 md:pl-10">
+    <div className="card relative pl-8 md:pl-10 group">
       <div
         className="absolute left-0 top-0 bottom-0 w-1.5 rounded-l-2xl"
         style={{ backgroundColor: accent }}
       ></div>
-      <div className="flex items-center gap-3 mb-4">
+      <div className="flex items-center gap-3.5 mb-4">
         <span
-          className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
+          className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0 shadow-xs"
           style={{ backgroundColor: accent }}
         >
           {String(index + 1).padStart(2, '0')}
         </span>
-        <h2 className="heading-md text-[#2b2620]">{title}</h2>
+        <h2 className="heading-md text-slate-900">{title}</h2>
       </div>
-      <div className="prose space-y-4">{children}</div>
+      <div className="prose space-y-4 text-slate-600">{children}</div>
     </div>
   );
 }
 
 export default function About() {
   return (
-    <div className="bg-[#fbf7ef] min-h-screen">
+    <div className="bg-[#f8fafc] text-slate-900 min-h-screen">
       <PageHero
         eyebrow="A Bit About Me"
         title="About Rishon"
         subtitle="High school engineer, researcher, and co-founder focused on assistive technology, EEG wearables, and AI for neurodiverse communities. Here's the fuller story."
       />
 
-      <div className="container-custom py-16 md:py-20">
+      <div className="container-custom py-16 md:py-24">
         <div className="max-w-4xl mx-auto space-y-8">
           <SectionCard index={0} title="Who I Am">
             <p>
@@ -75,9 +75,9 @@ export default function About() {
 
           <SectionCard index={3} title="Skills & Technical Focus">
             <div className="grid md:grid-cols-2 gap-8 not-prose">
-              <div>
-                <h3 className="heading-sm mb-3 text-base text-[#0d9488]">Hardware & Embedded Systems</h3>
-                <ul className="text-sm space-y-2 text-[var(--muted)]">
+              <div className="p-5 rounded-xl bg-slate-50 border border-slate-200">
+                <h3 className="heading-sm mb-3 text-base text-sky-700">Hardware & Embedded Systems</h3>
+                <ul className="text-sm space-y-2 text-slate-600">
                   <li>• Wearable EEG signal acquisition & processing</li>
                   <li>• Microcontroller programming & embedded circuits</li>
                   <li>• PCB and schematic development</li>
@@ -85,9 +85,9 @@ export default function About() {
                   <li>• Child-friendly hardware ergonomics & prototyping</li>
                 </ul>
               </div>
-              <div>
-                <h3 className="heading-sm mb-3 text-base text-[#0d9488]">Software & AI Architecture</h3>
-                <ul className="text-sm space-y-2 text-[var(--muted)]">
+              <div className="p-5 rounded-xl bg-slate-50 border border-slate-200">
+                <h3 className="heading-sm mb-3 text-base text-teal-700">Software & AI Architecture</h3>
+                <ul className="text-sm space-y-2 text-slate-600">
                   <li>• Deep learning & CNNs for medical imaging</li>
                   <li>• Python, PyTorch, and scikit-learn</li>
                   <li>• Signal filtering, Fourier transforms & DSP</li>
@@ -105,9 +105,9 @@ export default function About() {
                 { label: 'Cohort', value: 'Class of 2028' },
                 { label: 'Non-Profit', value: 'Rooting Minds' },
               ].map((stat, i) => (
-                <div key={i} className="text-center p-3.5 bg-teal-50/70 rounded-xl border border-teal-200/80">
+                <div key={i} className="text-center p-4 bg-slate-50 rounded-xl border border-slate-200 shadow-2xs">
                   <p className="text-base sm:text-lg font-bold text-slate-900">{stat.value}</p>
-                  <p className="text-[0.65rem] uppercase tracking-wide text-[#0d9488] font-semibold mt-0.5">{stat.label}</p>
+                  <p className="text-[0.68rem] uppercase tracking-wider text-sky-700 font-semibold mt-1">{stat.label}</p>
                 </div>
               ))}
             </div>
